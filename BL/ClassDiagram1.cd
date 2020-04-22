@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BO.BankBranch">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAABAAAAAEAAAAAAAAAAgAAAAAgBAAKAAAAAA=</HashCode>
+      <FileName>BankBranch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BO.Client">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BO.GuestRequest">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAEAAAAAAQEgSAEAACCBAAACCAAAQADAQAAAAA=</HashCode>
+      <FileName>GuestRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BO.Host">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAgAAAAUAACg=</HashCode>
+      <FileName>Host.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BO.HostingUnit">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAACAAQUAAEAAAAAAAACAAIAAAAAAQAAAAA=</HashCode>
+      <FileName>HostingUnit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BO.Manager">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BO.Order">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAGAAAiAAQAgAEAAAAAEAAAQAABQAAAAAAAAAI=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BO.Person">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAEACAABAAEAAAAAAAAAAAAAAACAAAAIAAAAAg=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlApi.BlFactory" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>BlFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BL.BLImp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwGlAYRiAoACAYAQAAAAABCAIgAAOgCgACIwEQIDAcI=</HashCode>
+      <FileName>BLImp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BL.Converters" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAA=</HashCode>
+      <FileName>Converters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BlApi.IBl" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwGFAYQiAoACAYAQAAAAABCAIgAAOgCgACIwEQIDAcI=</HashCode>
+      <FileName>IBl.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BO.IdType" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BO.PersonStatus" Collapsed="true">
+    <Position X="4" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BO.RequestStatus" Collapsed="true">
+    <Position X="5.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAEAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BO.Areas" Collapsed="true">
+    <Position X="4" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIEAAAAEAAAAAAAAAAAAAAAAAAggAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BO.HostingType" Collapsed="true">
+    <Position X="5.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAABAAAAAAAAAAQAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BO.Answer" Collapsed="true">
+    <Position X="2.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAABAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BO.OrderStatus" Collapsed="true">
+    <Position X="2.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAgBAAAAAAAAAQAAAAAAAAAIAAAAAEAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BO.ActivityStatus" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

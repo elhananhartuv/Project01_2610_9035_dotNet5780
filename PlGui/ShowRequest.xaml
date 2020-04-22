@@ -1,0 +1,57 @@
+﻿<Window x:Class="PlGui.ShowRequest"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlGui"
+        mc:Ignorable="d" FlowDirection="RightToLeft"
+        Title="ShowRequest" Height="500" Width="350" WindowStartupLocation="CenterScreen" Background="{DynamicResource backgroundWindow}">
+    <Grid>
+        <Grid x:Name="AddRequestGrid" VerticalAlignment="Center" HorizontalAlignment="Stretch" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="תאריך כניסה:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <DatePicker x:Name="entryDateDatePicker" IsEnabled="False" IsTodayHighlighted="True" DisplayDateStart="{x:Static sys:DateTime.Today}" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" SelectedDate="{Binding EntryDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <Label Content="תאריך יציאה:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <DatePicker x:Name="leaveDateDatePicker" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="1" SelectedDate="{Binding LeaveDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <Label Content="איזור:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <ComboBox x:Name="areaComboBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="2" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="תת איזור:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <TextBox x:Name="subAreaTextBox" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="3" Text="{Binding SubArea, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" IsReadOnly="True"/>
+            <Label Content="מספר חדרים:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+            <TextBox x:Name="roomsTextBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="4" Text="{Binding Rooms, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="מספר מבוגרים:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+            <TextBox x:Name="adultsTextBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="5" Text="{Binding Adults, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="מספר ילדים:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
+            <TextBox x:Name="childrenTextBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="6" Text="{Binding Children, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="סוג צימר:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+            <ComboBox x:Name="typeComboBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="7" Text="{Binding Type, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="בריכה:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="8" VerticalAlignment="Center"/>
+            <ComboBox x:Name="poolComboBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="8" Text="{Binding Pool, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="ג'קוזי:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="9" VerticalAlignment="Center"/>
+            <ComboBox x:Name="jacuzziComboBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="9" Text="{Binding Jacuzzi, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="גינה:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="10" VerticalAlignment="Center"/>
+            <ComboBox x:Name="gardenComboBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="10" Text="{Binding Garden, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="אטרקציות לילדים:"   Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="11" VerticalAlignment="Center"/>
+            <ComboBox x:Name="childrensAttractionsComboBox" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="3" Grid.Row="11" Text="{Binding ChildrensAttractions, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Button x:Name="closeWindow" Content="סגור" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,30,0,0" Click="closeWindow_Click" />
+    </Grid>
+</Window>

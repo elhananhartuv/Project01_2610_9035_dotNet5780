@@ -1,0 +1,55 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlGui"
+        xmlns:BO="clr-namespace:BO;assembly=BL"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="PlGui.AddOrder"
+        mc:Ignorable="d"
+        Title="AddOrder" Height="600" Width="950" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Background="{StaticResource backgroundWindow}" FlowDirection="RightToLeft">
+    <Window.Resources>
+        <CollectionViewSource x:Key="guestRequestViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:GuestRequest}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid>
+        <Grid Margin="50">
+            <ListView x:Name="guestRequestListView" ItemsSource="{Binding requests}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Area}" Header="איזור"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="סוג"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding EntryDate, StringFormat=d}" Header="תאריך כניסה"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding LeaveDate, StringFormat=d}" Header="תאריך יציאה"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Adults}" Header="מבוגרים"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Children}" Header="ילדים"/>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="findUnit_Bt" Content="יחידות מתאימות" Click="findUnit_Bt_Click" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Menu IsMainMenu="True" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem Header="סנן לפי">
+                <MenuItem x:Name="areaMenuItem" Header="איזור">
+                    <MenuItem Header="הכל" IsCheckable="True" Checked="MenuItem_Checked"/>
+                    <MenuItem Header="ירושלים" IsCheckable="True" Checked="MenuItem_Checked"/>
+                    <MenuItem Header="צפון" IsCheckable="True" Checked="MenuItem_Checked"/>
+                    <MenuItem Header="דרום" IsCheckable="True" Checked="MenuItem_Checked"/>
+                    <MenuItem Header="מרכז" IsCheckable="True" Checked="MenuItem_Checked"/>
+                </MenuItem>
+                <MenuItem Header="מס נופשים">
+                    <MenuItem Header="2" IsCheckable="True" Checked="MenuItem_Checked_1"/>
+                    <MenuItem Header="2-4" IsCheckable="True" Checked="MenuItem_Checked_1"/>
+                    <MenuItem Header="4-6" IsCheckable="True" Checked="MenuItem_Checked_1"/>
+                    <MenuItem Header="6-8" IsCheckable="True" Checked="MenuItem_Checked_1"/>
+                    <MenuItem Header="8 ומעלה" IsCheckable="True" Checked="MenuItem_Checked_1"/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

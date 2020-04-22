@@ -1,0 +1,52 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlGui"
+        xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PlGui.ShowHostingUnit"
+        mc:Ignorable="d"
+        Title="ShowHostingUnit" Height="450" Width="400" Loaded="Window_Loaded" FlowDirection="RightToLeft" 
+        WindowStartupLocation="CenterScreen" Background="{DynamicResource backgroundWindow}">
+    <Window.Resources>
+        <CollectionViewSource x:Key="hostingUnitViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:HostingUnit}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid>
+        <Grid x:Name="showUnitGrid" VerticalAlignment="Center" HorizontalAlignment="Center" DataContext="{StaticResource hostingUnitViewSource}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="איזור:"/>
+            <ComboBox x:Name="areaComboBox" Width="120" VerticalAlignment="Center" IsEnabled="False" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3"  HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="שם היחידה:"/>
+            <TextBox x:Name="hostingUnitNameTextBox" IsEnabled="False" Width="120" VerticalAlignment="Center" Text="{Binding HostingUnitName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="מחיר ללילה:"/>
+            <TextBox x:Name="pricePerNightTextBox" Width="120" IsEnabled="False" VerticalAlignment="Center" Text="{Binding PricePerNight, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label Content="מס חדרים:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <TextBox x:Name="roomsTextBox" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" Height="23" Margin="3" Text="{Binding Rooms, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="בריכה:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+            <CheckBox x:Name="poolCheckBox" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Pool, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="4" VerticalAlignment="Center" IsEnabled="False"/>
+            <Label Content="ג'קוזי:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+            <CheckBox x:Name="jacuziCheckBox" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Jacuzzi, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="5" VerticalAlignment="Center" IsEnabled="False"/>
+            <Label Content="גינה:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
+            <CheckBox x:Name="gardenCheckBox" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Garden, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="6" VerticalAlignment="Center" IsEnabled="False"/>
+            <Label Content="אטרקציות לילדים:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+            <CheckBox x:Name="childrensAttractionsCheckBox" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding ChildrensAttractions, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="7" VerticalAlignment="Center" IsEnabled="False"/>
+            <Label VerticalAlignment="Center" Grid.Row="8" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="סטטוס:"/>
+            <TextBox x:Name="statusTextBox" Width="120" VerticalAlignment="Center" IsEnabled="False" Text="{Binding Status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="8" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+        </Grid>
+        <Button x:Name="closeWindow" Content="סגור" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="closeWindow_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,56 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlGui"
+        xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PlGui.ShowOrder"
+        mc:Ignorable="d"
+        Title="ShowOrder" Height="400" Width="400" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" FlowDirection="RightToLeft" Background="{StaticResource backgroundWindow}">
+    <Window.Resources>
+        <CollectionViewSource x:Key="orderViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:Order}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid>
+
+        <Grid x:Name="showOrderGrid" VerticalAlignment="Center" HorizontalAlignment="Center" DataContext="{StaticResource orderViewSource}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="מס הזמנה:"/>
+            <TextBox x:Name="keyTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Key, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="סטטוס:"/>
+            <TextBox x:Name="statusTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="תאריך יצירת הזמנה:"/>
+            <DatePicker x:Name="orderDateDatePicker" VerticalAlignment="Center" SelectedDate="{Binding OrderDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="שם לקוח:"/>
+            <TextBox x:Name="clientNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding ClientName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="שם יחידת האירוח:"/>
+            <TextBox x:Name="hostingUnitNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding HostingUnitName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="5" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="תאריך שליחת מייל:"/>
+            <DatePicker x:Name="sentDateDatePicker" VerticalAlignment="Center" SelectedDate="{Binding SentDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="תאריך סגירה:"/>
+            <DatePicker x:Name="closeDateDatePicker" VerticalAlignment="Center" SelectedDate="{Binding CloseDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="7" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="עמלה:"/>
+            <TextBox x:Name="commissionTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Commission, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="7" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="8" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="עלות כוללת:"/>
+            <TextBox x:Name="totalPriceTextBox" Width="120" VerticalAlignment="Center" Text="{Binding TotalPrice, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="8" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+        </Grid>
+        <Button x:Name="closeButton" Content="סגור חלון" Click="closeButton_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
